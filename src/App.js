@@ -1,7 +1,7 @@
-import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { NavBar, Footer } from "./layouts";
-import { Home, Experience, Kuebik } from "./pages";
+import { Home } from "./pages";
+import { routes } from "./routes";
 import { AppContainer, BodyContainer } from "./styles";
 
 function App() {
@@ -11,10 +11,19 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <div>
+            {/* conditional NavBar to be visible on all routes except "/" */}
             <Route exact path="/:page" component={NavBar} />
             <BodyContainer className="body">
-              <Route exact path="/experience" component={Experience} />
-              <Route exact path="/kuebik" component={Kuebik} />
+              {routes.map((route, index) => {
+                return (
+                  <Route
+                    key={index}
+                    exact
+                    path={`${route.path}`}
+                    component={route.component}
+                  />
+                );
+              })}
             </BodyContainer>
           </div>
         </Switch>

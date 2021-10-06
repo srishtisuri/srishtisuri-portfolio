@@ -25,7 +25,6 @@ const buttons = [
   {
     label: "hello",
     image: hello,
-    // iconColor: "#D4F1FB",
     iconColor: "#D5CAFA",
     alt: "kuebik logo",
   },

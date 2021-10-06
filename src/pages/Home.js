@@ -1,6 +1,6 @@
 import React from "react";
 import { cube, srishti, experience, hello, code } from "../assets";
-import { StyledHeading, StyledImg } from "./styles";
+import { StyledH1, StyledImg } from "./styles";
 import { StyledLink, Circle, StyledDiv, StyledRoute } from "./Home.styles";
 
 const buttons = [
@@ -25,7 +25,8 @@ const buttons = [
   {
     label: "hello",
     image: hello,
-    iconColor: "#D4F1FB",
+    // iconColor: "#D4F1FB",
+    iconColor: "#D5CAFA",
     alt: "kuebik logo",
   },
 ];
@@ -34,7 +35,7 @@ const Home = () => {
   return (
     <div>
       <StyledImg src={srishti} alt="Srishti" height="240px" />
-      <StyledHeading>srishti suri</StyledHeading>
+      <StyledH1>srishti suri</StyledH1>
       <StyledDiv>
         {buttons.map((el) => {
           return (

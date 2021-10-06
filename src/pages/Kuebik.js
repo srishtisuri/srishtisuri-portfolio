@@ -1,9 +1,10 @@
 import React from "react";
+import { StyledH1 } from "./styles";
 
 const Kuebik = () => {
   return (
     <div>
-      <h1>Kuebik</h1>
+      <StyledH1>kuebik</StyledH1>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 import React from "react";
+import { StyledH1 } from "./styles";
 
 const Experience = () => {
   return (
     <div>
-      <h1>Experience</h1>
+      <StyledH1>experience</StyledH1>
     </div>
   );
 };

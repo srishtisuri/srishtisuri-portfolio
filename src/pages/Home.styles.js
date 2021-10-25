@@ -1,11 +1,25 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const StyledDiv = styled.div`
-  margin: 60px;
+export const Container = styled.div`
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const ButtonStrip = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px;
+`;
+
+export const StyledRoute = styled.div`
+  width: 160px;
 `;
 
 export const Circle = styled.div`
@@ -16,11 +30,6 @@ export const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-export const StyledRoute = styled.div`
-  align-items: center;
-  margin: 50px 20px;
 `;
 
 export const StyledLink = styled(Link)`
@@ -51,4 +60,9 @@ export const StyledLink = styled(Link)`
     transform: scaleX(1);
     transform-origin: bottom left;
   }
+`;
+
+export const StyledImg = styled.img`
+  border-radius: 24px;
+  height: 240px;
 `;

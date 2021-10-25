@@ -1,7 +1,14 @@
 import React from "react";
-import { cube, srishti, experience, hello, code } from "../assets";
-import { StyledH1, StyledImg } from "./styles";
-import { StyledLink, Circle, StyledDiv, StyledRoute } from "./Home.styles";
+import { cube, srishti, experience, hello, book } from "../assets";
+import { StyledH1 } from "./styles";
+import {
+  Container,
+  StyledLink,
+  Circle,
+  StyledRoute,
+  StyledImg,
+  ButtonStrip,
+} from "./Home.styles";
 
 const buttons = [
   {
@@ -11,14 +18,14 @@ const buttons = [
     alt: "working at laptop",
   },
   {
-    label: "kuebik",
-    image: cube,
+    label: "blog",
+    image: book,
     iconColor: "#F3DB9F",
-    alt: "kuebik logo",
+    alt: "book",
   },
   {
-    label: "projects",
-    image: code,
+    label: "kuebik",
+    image: cube,
     iconColor: "#EFB2B2",
     alt: "kuebik logo",
   },
@@ -28,17 +35,23 @@ const buttons = [
     iconColor: "#D5CAFA",
     alt: "kuebik logo",
   },
+  // {
+  //   label: "projects",
+  //   image: code,
+  //   iconColor: "#c4f4ff",
+  //   alt: "kuebik logo",
+  // },
 ];
 
 const Home = () => {
   return (
-    <div>
+    <Container className="home">
       <StyledImg src={srishti} alt="Srishti" height="240px" />
       <StyledH1>srishti suri</StyledH1>
-      <StyledDiv>
-        {buttons.map((el) => {
+      <ButtonStrip>
+        {buttons.map((el, index) => {
           return (
-            <StyledRoute>
+            <StyledRoute key={index}>
               <StyledLink to={`/${el.label}`}>
                 <Circle color={el.iconColor}>
                   <img src={el.image} height="35px" alt={el.alt} />
@@ -48,8 +61,8 @@ const Home = () => {
             </StyledRoute>
           );
         })}
-      </StyledDiv>
-    </div>
+      </ButtonStrip>
+    </Container>
   );
 };
 

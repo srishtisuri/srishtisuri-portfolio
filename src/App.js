@@ -1,35 +1,28 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { NavBar, Footer } from "./layouts";
-import { Home } from "./pages";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Header, Footer } from "./layouts";
 import { routes } from "./routes";
-import { AppContainer, BodyContainer } from "./styles";
+import { MainContainer } from "./styles";
+import "./App.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AppContainer className="app">
+    <Router>
+      <div className="app">
         <Switch>
-          <Route exact path="/" component={Home} />
-          <div>
-            {/* conditional NavBar to be visible on all routes except "/" */}
-            <Route exact path="/:page" component={NavBar} />
-            <BodyContainer className="body">
-              {routes.map((route, index) => {
-                return (
-                  <Route
-                    key={index}
-                    exact
-                    path={`${route.path}`}
-                    component={route.component}
-                  />
-                );
-              })}
-            </BodyContainer>
-          </div>
+          {routes.map((route, index) => {
+            return (
+              <Route key={index} exact path={`${route.path}`}>
+                {route.header && <Header />}
+                <MainContainer className="main">
+                  {route.component}
+                </MainContainer>
+                {route.footer && <Footer />}
+              </Route>
+            );
+          })}
         </Switch>
-        <Footer />
-      </AppContainer>
-    </BrowserRouter>
+      </div>
+    </Router>
   );
 }
 

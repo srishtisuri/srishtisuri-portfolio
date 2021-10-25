@@ -1,11 +1,11 @@
 import React from "react";
-import { StyledH1 } from "./styles";
+import { PageContainer, StyledH1 } from "./styles";
 
 const Kuebik = () => {
   return (
-    <div>
+    <PageContainer>
       <StyledH1>kuebik</StyledH1>
-    </div>
+    </PageContainer>
   );
 };
 

@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { linkedin, github, spotify } from "../assets";
+import { linkedinLogo, githubLogo, spotifyLogo } from "../assets";
 import { Column } from "../styles";
 
 const Container = styled.div`
+  font-family: "Manrope", sans-serif;
   position: fixed;
   z-index: 9999;
   top: 0;
   width: 100%;
-  padding: 8px 0;
+  padding: 13px 0;
   font-size: 18px;
   font-weight: 500;
-  background-color: rgb(255, 255, 255, 0.72);
+  background-color: rgb(255, 255, 255, 0.8);
   border-bottom: 1px solid #e6e6e6;
   backdrop-filter: blur(20px);
 `;
@@ -27,22 +28,28 @@ const LogoLink = styled(Link)`
 `;
 
 const StyledLink = styled(Link)`
-  margin: 10px;
+  padding: 5px 10px;
   text-decoration: none;
   color: #000;
+
+  &:hover {
+    background-color: #0000001a;
+    border-radius: 6px;
+  }
 `;
 
+/* Need to replace h2 */
 const LogoName = styled.h2`
   margin: 0;
   /* Fallback: Set a background color. */
   background-color: black;
 
   /* Create the gradient. */
-  background: rgb(0, 71, 255);
+  background: rgb(0, 63, 172);
   background: linear-gradient(
     90deg,
-    rgba(0, 71, 255, 1) 0%,
-    rgba(0, 195, 11, 1) 100%
+    rgba(0, 63, 172, 1) 0%,
+    rgba(0, 190, 30, 1) 100%
   );
 
   /* Set the background size and repeat properties. */
@@ -80,9 +87,9 @@ const Header = () => {
           <StyledLink to="/hello">hello</StyledLink>
         </Column>
         <Column flex={1}>
-          <StyledImg src={linkedin} alt="linkedin logo" />
-          <StyledImg src={github} alt="github logo" />
-          <StyledImg src={spotify} alt="spotify logo" />
+          <StyledImg src={linkedinLogo} alt="linkedin logo" />
+          <StyledImg src={githubLogo} alt="github logo" />
+          <StyledImg src={spotifyLogo} alt="spotify logo" />
         </Column>
       </StyledHeader>
     </Container>

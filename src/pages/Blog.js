@@ -1,10 +1,13 @@
 import React from "react";
-import { StyledH1, PageContainer } from "./styles";
+import { PageContainer } from "./styles";
+import { Text } from "../components";
 
 const Blog = () => {
   return (
     <PageContainer>
-      <StyledH1>blog</StyledH1>
+      <Text weight="medium" is="h1" size={7}>
+        blog
+      </Text>
     </PageContainer>
   );
 };

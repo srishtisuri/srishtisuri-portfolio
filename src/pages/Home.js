@@ -1,6 +1,6 @@
 import React from "react";
 import { cube, srishti, experience, hello, book } from "../assets";
-import { StyledH1 } from "./styles";
+import { Text } from "../components";
 import {
   Container,
   StyledLink,
@@ -47,7 +47,9 @@ const Home = () => {
   return (
     <Container className="home">
       <StyledImg src={srishti} alt="Srishti" height="240px" />
-      <StyledH1>srishti suri</StyledH1>
+      <Text weight="medium" is="h1" size={9}>
+        srishti suri
+      </Text>
       <ButtonStrip>
         {buttons.map((el, index) => {
           return (

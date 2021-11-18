@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
   position: relative;
   bottom: 0;
   width: 100%;
